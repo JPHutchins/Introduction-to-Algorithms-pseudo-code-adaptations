@@ -43,7 +43,7 @@ int pop_max_heap(int A[], int k, int length) {
     }
     //we are 1-indexed:
     int max = A[1];
-    //pop ... result is that A may no longer be a max heap | could avoid this O(n) by building the max-heap from i=2 instead of i=1
+    //pop ... result is that A may no longer be a max heap | could avoid this O(n) by building the max-heap from i++ instead of i=1
     for (int i=1; i<length; i++) {
         A[i] = A[i+1];
     }
