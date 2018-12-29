@@ -43,7 +43,7 @@ int pop_max_heap(int A[], int k, int length) {
     }
     //we are 1-indexed:
     int max = A[1];
-    //pop ... result is that A may no longer be a max heap
+    //pop ... result is that A may no longer be a max heap | could avoid this O(n) by building the max-heap from i=2 instead of i=1
     for (int i=1; i<length; i++) {
         A[i] = A[i+1];
     }
@@ -51,7 +51,7 @@ int pop_max_heap(int A[], int k, int length) {
 }
 //geeks for geeks tests https://practice.geeksforgeeks.org/problems/k-largest-elements/0
 int main() {
-	int t, k, n, A[1000];
+	int t, k, n, A[1000]; //For test cases t return the k largest integers in descending order for array A of length n
 	
 	  scanf("%d", &t);
 	  while (t--) {
@@ -67,7 +67,7 @@ int main() {
 		      //decrement n by one since we popped the max item off the heap
 		      n--;
 		  }
-		  printf("\n");
+		  printf("\n"); // in O(n + klgn)
 	  }
 	return 0;
 }
